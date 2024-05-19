@@ -1,0 +1,32 @@
+/* static/css/main.css */
+
+body{
+    background-color: aqua;
+}
+
+h2.px-3.py-2 {
+    color: green;
+}
+
+h1.px-3.py-2, h1.py-2.d-flex.align-items-center.justify-content-center, h3.header{
+    color: #2C3E50 ;
+}
+
+.btn.btn-primary {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#info_name{
+    background-color: #4cb4c7;
+    height: 120px;
+}
+
+#info_balance{
+    background-color: #7abecc;
+    height: 120px;
+}
+
+#send{
+    background-color: #7CD1C0;
+}

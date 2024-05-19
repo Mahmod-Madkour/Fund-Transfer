@@ -1,0 +1,68 @@
+<!-- account/templates/profile.html -->
+
+{% extends "base.html" %}
+
+{% block page %}
+    <div class="container mt-5 mb-5">
+        
+        <!-- Dispaly Acounts Info -->
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-2 d-flex align-items-center justify-content-center" id="info_name" style="">
+                    <h1 class="px-3 py-2"> Hello, {{ user_profile.name }} </h1>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card p-2 d-flex align-items-center justify-content-center" id="info_balance">
+                    <h1 class="px-3 py-2"> Your Balance : {{ user_profile.balance }} </h1>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!-- Transfar -->
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-10">
+                <div class="card px-3 py-2" id="send">
+                    <h1 class=" py-2 d-flex align-items-center justify-content-center"> Send Money </h1>
+                    <br>
+
+                    <!-- Display Messages -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="d-flex align-items-center justify-content-center">
+                                {% if message.tags == 'error'%}
+                                    <h6 style=" text: center; color: red"> {{ message }} </h6>
+                                {% else %}
+                                    <h6 style=" text: center; color: green"> {{ message }} </h6>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Fill Data -->
+                    <form class="form" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-6">
+                                <h3 class="header">User :</h3>
+                                <select name="receiver" class="form-control" required>
+                                    <option value="" disabled selected>Select a user</option>
+                                    {% for account in accounts %}
+                                        <option value="{{ account.id }}"> {{ account.name }} </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="header">Amount :</h3>
+                                <input type="number" name="amount" class="form-control" placeholder="Enter amount" step="0.01" min="0.01" required>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock page %}
