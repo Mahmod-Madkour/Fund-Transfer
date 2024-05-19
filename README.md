@@ -9,6 +9,7 @@
 ## 2- Functional
   - **Import accounts from CSV files.**
   - **List all accounts.‬**
+  - **Search for an account.‬**
   - **Get account information.‬**
   - **Transfer funds between two accounts.‬**
 
