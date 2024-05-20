@@ -21,8 +21,8 @@ class Profile(models.Model):
 
 ### Transfer 
 class Transfer(models.Model):
-    sender = models.ForeignKey(Profile, on_delete=models.PROTECT, null=True, related_name='sender_transfers')
-    receiver = models.ForeignKey(Profile, on_delete=models.PROTECT, null=True, related_name='receiver_transfers')
+    sender = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='sender_transfers')
+    receiver = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='receiver_transfers')
     amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     def clean(self):
