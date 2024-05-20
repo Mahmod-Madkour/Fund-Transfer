@@ -7,7 +7,7 @@
 ### This app‬ supports importing a list of accounts with opening balances, querying these accounts, and‬ transferring funds between any two accounts.
 
 ## 2- Functional
-  - **Import accounts from CSV files.**
+  - **Import accounts from CSV and EXCEL files.**
   - **List all accounts.‬**
   - **Search for an account.‬**
   - **Get account information.‬**
