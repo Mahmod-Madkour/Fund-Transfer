@@ -9,11 +9,16 @@
 
                 <!-- Upload Files -->
                 <div class="card p-2">
-                    <h2 class="px-3 py-2"> Upload CSV or XLSX File Here :</h2>
+                    <h3 class="px-3 py-2"> Upload CSV or XLSX File Here :</h3>
 
                     <!-- Error Msg -->
                     {% if error_msg %}
-                        <div class="text-danger" style="color: red !important;"> {{ error_msg }} </div>
+                        <div class="text-danger" style="color: red !important;">{{ error_msg }}</div>
+                    {% endif %}
+
+                    <!-- Success Msg -->
+                    {% if msg %}
+                        <div class="text-success" style="color: green !important;">{{ msg }}</div>
                     {% endif %}
 
                     <!-- Upload -->
